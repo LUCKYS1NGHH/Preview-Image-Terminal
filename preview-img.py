@@ -40,3 +40,8 @@ def render_image_in_terminal(image_path, width=80):
     except Exception as e:
         print(f"Error rendering image: {e}")
 
+render_image_in_terminal("sample_images/earth.webp")
+print("--"*40)
+render_image_in_terminal("sample_images/minecraft.webp")
+print("--"*40)
+render_image_in_terminal("sample_images/nature.webp")
