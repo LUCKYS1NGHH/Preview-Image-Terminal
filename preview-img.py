@@ -5,7 +5,7 @@ from PIL import Image
 def render_image_in_terminal(image_path, width=80):
     """Render image in terminal — full-pixel if Kitty, else fallback to ANSI color blocks."""
 
-    # 1️⃣ Try Kitty protocol for true pixel rendering ---
+    # 1️⃣  Try Kitty protocol for true pixel rendering ---
     if os.environ.get("TERM", "").startswith("xterm-kitty"):
         try:
             subprocess.run(["kitty", "+kitten", "icat", "--silent", image_path], check=True)
@@ -15,7 +15,7 @@ def render_image_in_terminal(image_path, width=80):
         except Exception as e:
             print(f"[Kitty mode failed: {e}] Falling back to ANSI blocks...")
 
-    # 2️⃣ Fallback: ANSI color block rendering ---
+    # 2️⃣  Fallback: ANSI color block rendering ---
     try:
         img = Image.open(image_path)
         aspect_ratio = img.height / img.width
@@ -38,10 +38,12 @@ def render_image_in_terminal(image_path, width=80):
 
         print("\n".join(output))
     except Exception as e:
-        print(f"Error rendering image: {e}")
+        print(f"Error rendering the image: {e}")
 
 render_image_in_terminal("sample_images/earth.webp")
 print("--"*40)
 render_image_in_terminal("sample_images/minecraft.webp")
 print("--"*40)
 render_image_in_terminal("sample_images/nature.webp")
+
+print("Just pass the file path of the image in the Function Parameter :)")
