@@ -1,6 +1,14 @@
-import os
+import os, sys
 import subprocess
 from PIL import Image
+
+
+if len(sys.argv) < 2:
+    print("Please provide image path.")
+    sys.exit(1)
+
+image_path = sys.argv[1]
+
 
 def render_image_in_terminal(image_path, width=80):
     """Render image in terminal — full-pixel if Kitty, else fallback to ANSI color blocks."""
@@ -40,10 +48,5 @@ def render_image_in_terminal(image_path, width=80):
     except Exception as e:
         print(f"Error rendering the image: {e}")
 
-render_image_in_terminal("sample_images/earth.webp")
-print("--"*40)
-render_image_in_terminal("sample_images/minecraft.webp")
-print("--"*40)
-render_image_in_terminal("sample_images/nature.webp")
 
-print("Just pass the file path of the image in the Function Parameter :)")
+render_image_in_terminal(image_path)
