@@ -1,5 +1,7 @@
 # Preview-Image-Terminal
-Preview Images in Terminal with Python Script
+
+### Preview Images in Terminal with Python
 
 > [!NOTE]
-> ### If you use Kitty Terminal than the image will appear in full pixels, Otherwise it will be displayed using ANSI color blocks in your terminal.
+> If you use Kitty Terminal than the image will appear in full pixels
+> Otherwise it will be displayed using ANSI color blocks in your terminal.
